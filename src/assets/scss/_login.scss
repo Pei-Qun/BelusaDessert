@@ -1,0 +1,29 @@
+.signin-form {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #f5f5f5;
+}
+
+.form-signin {
+  width: 90%;
+  max-width: 420px;
+  padding: 50px 20px;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.9);
+  border-radius: 8px;
+  .form-label-group{
+    margin-top: 20px;
+  }
+}
+
+.form-label-group input::placeholder,
+.form-label-group input::-moz-placeholder,
+.form-label-group input:-ms-input-placeholder,
+.form-label-group input::-webkit-input-placeholder,
+.form-label-group input::-ms-input-placeholder {
+  color: #aaa;
+}
