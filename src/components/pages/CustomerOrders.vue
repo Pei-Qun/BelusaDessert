@@ -299,18 +299,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .pro-pic{
-    height: 150px; background-size: cover; background-position: center
-  }
-  .card-body{
-    .card-text{
-      white-space: nowrap;
-      width: 100%;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      min-height: 20px;
-    }
-  }
+  
+  
   .carts{
        
   }

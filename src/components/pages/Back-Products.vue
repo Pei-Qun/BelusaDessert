@@ -2,8 +2,8 @@
   <div>
     <loading :active.sync="isLoading"></loading>
     
-    <button class="btn btn-outline-success" @click="openModel(true)">建立新產品</button>
-    <div class="product-edit">
+    <button class="btn btn-outline-info" @click="openModel(true)">建立新產品</button>
+    <div class="product-edit top">
       <div class="detail-area">
         <p class="category">分類</p>
         <p class="title">產品名稱</p>
@@ -15,9 +15,9 @@
       <div class="detail-area" v-for="(item, key) in products" :key="item.id">
         <p class="category">{{ item.category }}</p>
         <p class="title">{{ item.title }}</p>
-        <p class="price">{{ item.origin_price | currency }}</p>
+        <p class="price orng">{{ item.origin_price | currency }}</p>
         <p class="price" v-if="item.price">{{ item.price | currency }}</p>
-        <p class="price" v-else>無</p>
+        <p class="price last" v-else>無</p>
         <p class="price">
           <b class="onshelves" v-if="item.is_enabled">已上架</b>
           <b class="out_stock" v-else>未上架</b>
@@ -28,6 +28,7 @@
         </div>
       </div>
     </div>
+    
     <pagination :page-data="pagination" @changepage="getProducts"></pagination>
     <!-- Modal -->
     <div class="modal fade" id="modal-add" tabindex="-1" role="dialog" aria-hidden="true">
@@ -219,42 +220,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.product-edit{
-  margin-top: 20px;
-  .detail-area{
-    display: flex;
-    justify-content: space-between;
-    border-top: 1px solid #ccc;
-    padding-top: 10px;
-    margin-bottom: 10px;
-    p{
-      padding: 6px 0;
-      margin: 0;
-      font-size: 16px;
-    }
-    .category{
-      flex: 0 0 120px;
-    }
-    .title{
-      flex: 1;
-      font-weight: bold;
-    }
-    .price{
-      flex: 0 0 80px;
-      .onshelves{
-        color: #28a745;
-      }
-      .out_stock{
-        color: #999;
-      }
-    }
-    .edit-delet{
-      flex: 0 0 120px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 16px;
-    }
-  }
-}
+
 </style>

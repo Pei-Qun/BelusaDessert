@@ -8,23 +8,28 @@ import 'bootstrap'
 import VueAxios from 'vue-axios'
 import VeeValidate from 'vee-validate';
 import zhTWValidate from 'vee-validate/dist/locale/zh_TW';
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
 
 // 引用自定義
 import App from './App'
 import router from './router'
 import './bus'
 import currencyFilter from './filters/currency';
+import timestampFilter from './filters/timestamp';
 import Pages from '@/components/Pagination' // @ 指 src
 
 Vue.config.productionTip = false
 Vue.use(VueAxios, axios)
 Vue.use(VeeValidate);
-VeeValidate.Validator.localize('zh_TW',zhTWValidate)
+VeeValidate.Validator.localize('zh_TW',zhTWValidate) //驗證表單
+Vue.use(VueAwesomeSwiper, /* { default global options } */)
 
 // 全域啟用元件
 Vue.component('Loading', Loading);
 Vue.component('pagination',Pages);
 Vue.filter('currency', currencyFilter);
+Vue.filter('timestamp', timestampFilter);
 
 axios.defaults.withCredentials = true;
 

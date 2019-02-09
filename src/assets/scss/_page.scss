@@ -1,0 +1,123 @@
+.card{
+  .pro-pic{
+    height: 150px; 
+    background-size: cover; 
+    background-position: center
+  }
+  .card-body{
+    .card-text{
+      white-space: nowrap;
+      width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      min-height: 20px;
+    }
+  }
+}
+.page-banner{
+  padding: 140px 0 80px 0;
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 150px;
+  h1{
+    font-weight: bold;
+    color: #fff;
+  }
+}
+.product-edit{
+  margin-top: 20px;
+  .detail-area{
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    p{
+      padding: 6px 0;
+      margin: 0;
+      font-size: 16px;
+    }
+    .title{
+      font-weight: bold;
+    }
+    .price{
+      .onshelves{
+        color: #28a745;
+      }
+      .out_stock{
+        color: #999;
+      }
+    }
+    .edit-delet{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 16px;
+    }
+  }
+  @media (min-width: 767px){
+    .detail-area{
+      .category{
+        flex: 0 0 120px;
+      }
+      .title{
+        flex: 1;
+      }
+      .price{
+        flex: 0 0 80px;
+      }
+      .edit-delet{
+        flex: 0 0 120px;
+      }
+    }
+  }
+  @media (max-width: 768px){
+    .detail-area{
+      flex-wrap: wrap;
+      &:nth-child(1){
+        display: none;
+      }
+      .category{
+        flex: 100%;
+        &::before{
+          content: '分類: '
+        }
+      }    
+      .title{
+        flex: 100%;
+        &::before{
+          content: '產品名稱: '
+        }
+      } 
+      .price{
+        flex: 33%;
+        &::before{
+          content: '售價: '
+        }
+        &.orng::before{
+          content: '原價: '
+        }
+        &.last::before{
+          content: '狀態: '
+        }
+      } 
+      .edit-delet{
+        flex: 100%;
+        justify-content: flex-start;
+      } 
+    }
+  }
+  @media (max-width: 576px){
+    .detail-area{ 
+      .price{
+        flex: 50%;
+      } 
+      .edit-delet{
+        flex: 50%;
+      } 
+    }
+  } 
+}

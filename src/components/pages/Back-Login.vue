@@ -14,12 +14,6 @@
       <label>會員密碼</label>
       <input type="password" class="form-control mb-4" v-model="user.password" placeholder="請輸入密碼" required>
     </div>
-
-    <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me" v-model="remember"> 記住帳號密碼
-      </label>
-    </div>
     <button class="btn btn-lg btn-primary btn-block" type="submit">會員登入</button>
   </form>
   </div>
